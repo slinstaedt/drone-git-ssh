@@ -44,7 +44,7 @@ else
 			refs/tags/* )
 				git checkout ${PLUGIN_GIT_REF:-$DRONE_COMMIT_REF}
 				;;
-			refs/pull/* | refs/pull-request/* | refs/merge-requests/* )
+			refs/pull/* | refs/pull-request/* | refs/pull-requests/* | refs/merge-requests/* )
 				git checkout ${DRONE_TARGET_BRANCH}
 				git fetch origin ${DRONE_COMMIT_REF}
 				git merge ${DRONE_COMMIT_SHA}
