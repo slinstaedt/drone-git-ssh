@@ -17,8 +17,8 @@ if isenv DRONE_NETRC_MACHINE; then
 	echo "Git credentials: /root/.netrc"
 	cat <<EOF > /root/.netrc
 machine ${DRONE_NETRC_MACHINE}
-login ${DRONE_NETRC_USERNAME}
-password ${DRONE_NETRC_PASSWORD}
+login ${DRONE_NETRC_USERNAME:-}
+password ${DRONE_NETRC_PASSWORD:-}
 EOF
 fi
 
