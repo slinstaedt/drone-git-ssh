@@ -15,13 +15,15 @@ if [ -e .git ]; then
 else
 	git clone $(env2args kebab '--$k $v' PLUGIN_CLONE_) $_url $PWD
 	if isenv PLUGIN_GIT_REF || isenv DRONE_COMMIT_REF; then
+		_ref="${PLUGIN_GIT_REF:-$DRONE_COMMIT_REF}"
+		test ${_ref:0:5} != "refs/" && _ref="refs/heads/$_ref"
 		set -x
-		case "${PLUGIN_GIT_REF:-$DRONE_COMMIT_REF}" in
+		case "$_ref" in
 			refs/heads/* )
 				git checkout ${PLUGIN_GIT_BRANCH:-$DRONE_COMMIT_BRANCH}
 				;;
 			refs/tags/* )
-				git checkout ${PLUGIN_GIT_REF:-$DRONE_COMMIT_REF}
+				git checkout $_ref
 				;;
 			refs/pull/* | refs/pull-request/* | refs/pull-requests/* | refs/merge-requests/* )
 				git checkout ${DRONE_TARGET_BRANCH}
