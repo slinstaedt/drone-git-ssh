@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/slinstaedt/drone-git-ssh/compare/v1.0.0...v1.0.1) (2020-05-13)
+
+
+### Bug Fixes
+
+* prefix ref when missing ([2ddd6fa](https://github.com/slinstaedt/drone-git-ssh/commit/2ddd6fabc8bbd7f2d7c38e7855361040f76fa908))
+* skip repo url handling on missing url ([b3185da](https://github.com/slinstaedt/drone-git-ssh/commit/b3185dae713fa66391762fc0c02bf596751769ce))
+
 ## 1.0.0 (2020-05-12)
 
 
