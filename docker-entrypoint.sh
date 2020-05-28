@@ -3,10 +3,6 @@ set -euo pipefail
 
 source git-env-setup.sh
 
-function isenv {
-	env | grep -q "^$1="
-}
-
 isenv PLUGIN_GIT_INIT_CMD && $PLUGIN_GIT_INIT_CMD
 
 _url="${PLUGIN_GIT_URL:-${DRONE_GIT_SSH_URL:-}}"
