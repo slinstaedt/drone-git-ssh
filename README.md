@@ -13,5 +13,5 @@ steps:
     image: kamalook/drone-git-ssh
     settings:
       git_key: { from_secret: git-key }
-      ssh_strict_host_key_checking: accept-new
+      ssh_config_strict_host_key_checking: accept-new
 ```
